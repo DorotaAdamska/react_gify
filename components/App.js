@@ -1,4 +1,4 @@
-var GIPHY_API_URL = 'http://api.giphy.com';
+var GIPHY_API_URL = 'https://api.giphy.com';
 var GIPHY_PUB_KEY = 'rHeiHtV4r7ia9E2we8PSa1HPqpfIIip7';
 
 
