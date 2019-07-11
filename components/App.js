@@ -16,36 +16,41 @@ App = React.createClass({
         this.setState({
           loading: true  
         });
-        this.getGif(searchingText, function(gif) {  
-          this.setState({  
-            loading: false,  
-            gif: gif,  
-            searchingText: searchingText 
-          });
-        }.bind(this));
-      },
+        this.getGif(searchingText)
+            .then((res) => {
+            this.setState({
+                loading: false,
+                gif: {
+                    url : response.fixed_width_downsampled_url,
+                    sourceUrl: response.url
+                    },
+                searchingText: searchingText
+            });
+        })
+        .catch(() => { console.log('Coś poszło nie tak :(', )});
+    },
     
       getGif: function(searchingText) {  
-          return new Promise(
-              function(resolve, reject) {
-
-        var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;  
-        var xhr = new XMLHttpRequest();  
-        xhr.open('GET', url);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-               var data = JSON.parse(xhr.responseText).data; 
-                var gif = {  
-                    url: data.fixed_width_downsampled_url,
-                    sourceUrl: data.url
-                };
-                resolve(gif); 
-            }
-            else {
-                reject(xhr.status);
-            }
-        }
-        xhr.send();
+        var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;   
+            
+        return new Promise(
+            function(resolve, reject) {
+                let xhr = new XMLHttpRequest();  
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        let data = JSON.parse(xhr.responseText).data; 
+                        let gif = {  
+                            url: data.fixed_width_downsampled_url,
+                            sourceUrl: data.url
+                        };
+                        resolve(gif); 
+                    }
+                    else {
+                        reject(xhr.status);
+                    }
+                }
+            xhr.open('GET', url);
+            xhr.send();
     })    
     },
 
