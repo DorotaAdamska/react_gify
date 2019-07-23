@@ -11,6 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
     "http-server": "^0.11.1"
   }
 }
