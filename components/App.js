@@ -50,7 +50,8 @@ App = React.createClass ({
 		var styles = {
 			margin: '0 auto',
 			textAlign: 'center',
-			widht: '90%'
+			widht: '90%',
+			fontFamily: 'sans-serif',
 		};
 		return (
 			<div style={styles}>
