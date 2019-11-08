@@ -1,8 +1,15 @@
-## O projekcie
-Jedna z pierwszych moim reactowych aplikacji zrobiona podczas kursu Kodilla WEB DEVELOPER  -  dynamiczna wyszukiwarka gifów. W polu do wyszukiwania można wpisać wybraną frazę, a gify są pobierane automatycznie.
+## About a project
+One of my first React applications made during the Kodilla WEB DEVELOPER course - dynamic gif search engine. You can enter the phrase you want into search field and the gifs will be downloaded automatically.
 
-## Podgląd projektu
+This project was bootstrapped with Create React App.
+In the project directory, you can run:
+
+### `npm start`
+
+It runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The page will reload if you make edits.<br>
+
+## Preview
 https://dorotaadamska.github.io/react_gify/
 
-## Uruchomienie w terminalu
-Ściągnij repo i użyj komendy `npm start`
